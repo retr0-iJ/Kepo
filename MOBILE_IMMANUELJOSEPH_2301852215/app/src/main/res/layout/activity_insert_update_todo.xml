@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mainViewmodel"
+            type="com.example.mobile_immanueljoseph_2301852215.viewmodel.InsertUpdateTodoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_basic_page"
+            tools:context=".ui.InsertUpdateTodoActivity">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+                android:background="@color/bg_basic_page">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:id="@+id/iv_back_button"
+                        android:layout_width="@dimen/back_btn_toolbar_size"
+                        android:layout_height="@dimen/back_btn_toolbar_size"
+                        app:srcCompat="@drawable/ic_arrow_back"
+                        android:foregroundGravity="center_horizontal" />
+                </androidx.appcompat.widget.Toolbar>
+
+                <LinearLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/basic_page_padding"
+                    android:paddingRight="@dimen/basic_page_padding">
+
+                    <TextView
+                        android:id="@+id/tv_insert_update_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/title_page_txtSize"
+                        tools:text="Create Todo" />
+
+                    <TextView
+                        android:id="@+id/tv_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/subtext_marginTop"
+                        android:textSize="@dimen/subtitle_page_txtSize"
+                        android:text="@string/your_todos_will_be_visible_to_others" />
+                </LinearLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <include layout="@layout/content_insert_update_todo"
+                android:id="@+id/content_insert_update_todo"
+                bind:secondViewmodel="@{mainViewmodel}"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="@color/sBase"
+                app:tint="@color/white"
+                app:srcCompat="@drawable/ic_check" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <include layout="@layout/progress_bar"
+            android:id="@+id/progress_bar_layout"
+            bind:foo="@{1}"/>
+    </RelativeLayout>
+</layout>

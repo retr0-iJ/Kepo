@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="foo"
+            type="int" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/basic_page_padding"
+        android:paddingTop="10dp"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_back_button"
+            android:layout_width="@dimen/back_btn_toolbar_size"
+            android:layout_height="@dimen/back_btn_toolbar_size"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/item_toolbar_margin"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <EditText
+            android:id="@+id/et_search_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/item_toolbar_margin"
+            android:layout_toRightOf="@id/iv_back_button"
+            android:layout_toLeftOf="@id/iv_search_button"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_border_edittext"
+            android:padding="@dimen/normal_et_padding"
+            android:hint="Search Todo..."
+            android:textSize="@dimen/normal_et_txtSize" />
+
+        <ImageView
+            android:id="@+id/iv_search_button"
+            android:layout_width="@dimen/search_btn_toolbar_size"
+            android:layout_height="@dimen/search_btn_toolbar_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/item_toolbar_margin"
+            app:srcCompat="@drawable/ic_search" />
+    </RelativeLayout>
+</layout>

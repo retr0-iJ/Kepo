@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="secondViewmodel"
+            type="com.example.mobile_immanueljoseph_2301852215.viewmodel.TodoDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:padding="@dimen/basic_page_padding"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_title_detail_todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subtext_marginTop"
+            android:textColor="@color/black"
+            tools:text="Algo Prog Assignment"
+            android:text="@{secondViewmodel.todo.title}"/>
+
+        <TextView
+            android:id="@+id/tv_desc_detail_todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Description" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subtext_marginTop"
+            android:textColor="@color/black"
+            tools:text="do ASAP Deadline: Dec 10th, 2020"
+            android:text="@{secondViewmodel.todo.description}"/>
+    </LinearLayout>
+</layout>

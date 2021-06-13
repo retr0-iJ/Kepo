@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MOBILE_IMMANUEL JOSEPH_2301852215</string>
+    <string name="login">LOGIN</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="search_todo">Search Todo</string>
+    <string name="search_user">Search User</string>
+    <string name="footer">© 2020 by Mobile Team</string>
+    <string name="title_activity_my_todo">MyTodoActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="my_todo">My Todo</string>
+    <string name="here_all_your_todos">Here all your todos!</string>
+    <string name="title_activity_insert_update">InsertUpdateActivity</string>
+    <string name="your_todos_will_be_visible_to_others">Your todos will be visible to others</string>
+    <string name="title_activity_detail_my_todo">DetailMyTodoActivity</string>
+    <string name="detail_todo">Detail Todo</string>
+    <string name="by_user">by user</string>
+    <string name="by_todo">by todo</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+</resources>

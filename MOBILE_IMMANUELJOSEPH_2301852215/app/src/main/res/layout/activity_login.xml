@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.example.mobile_immanueljoseph_2301852215.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.LoginActivity">
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:paddingBottom="100dp"
+                android:focusableInTouchMode="true">
+                <ImageView
+                    android:id="@+id/iv_kepo_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/kepo_logo_sm"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make stalking easier!"
+                    android:layout_gravity="center"
+                    />
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_et_height"
+                    android:layout_marginTop="40dp"
+                    android:padding="@dimen/normal_et_padding"
+                    android:textSize="@dimen/normal_et_txtSize"
+                    android:background="@drawable/rounded_border_edittext"
+                    android:text="@={loginViewModel.username}"
+                    android:hint="@string/username"
+                    />
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_et_height"
+                    android:layout_marginTop="@dimen/cmp_login"
+                    android:padding="@dimen/normal_et_padding"
+                    android:textSize="@dimen/normal_et_txtSize"
+                    android:background="@drawable/rounded_border_edittext"
+                    android:inputType="textPassword"
+                    android:text="@={loginViewModel.password}"
+                    android:hint="@string/password"
+                    />
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="@dimen/cmp_login"
+                    android:onClick="@{(v) -> loginViewModel.onClick(v)}"
+                    android:text="@string/login"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/footer"
+                />
+        </RelativeLayout>
+
+        <include layout="@layout/progress_bar"
+            bind:foo="@{1}"
+            android:id="@+id/progress_bar_layout"/>
+
+        <FrameLayout
+            android:id="@+id/framelayout_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

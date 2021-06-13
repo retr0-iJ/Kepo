@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobile_immanueljoseph_2301852215">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MOBILE_IMMANUELJOSEPH_2301852215">
+        <activity android:parentActivityName=".ui.HomeActivity" android:name=".ui.LogoutActivity"></activity>
+        <activity android:parentActivityName=".ui.SearchUserActivity" android:name=".ui.UserDetailActivity" />
+        <activity android:parentActivityName=".ui.HomeActivity" android:name=".ui.SearchUserActivity" />
+        <activity android:parentActivityName=".ui.HomeActivity" android:name=".ui.SearchTodoActivity" />
+        <activity
+            android:name=".ui.TodoDetailActivity"
+            android:label="@string/title_activity_detail_my_todo"
+            android:theme="@style/Theme.MOBILE_IMMANUELJOSEPH_2301852215.NoActionBar" />
+        <activity
+            android:name=".ui.InsertUpdateTodoActivity"
+            android:label="@string/title_activity_insert_update"
+            android:parentActivityName=".ui.MyTodoActivity"
+            android:theme="@style/Theme.MOBILE_IMMANUELJOSEPH_2301852215.NoActionBar" />
+        <activity
+            android:name=".ui.MyTodoActivity"
+            android:label="@string/title_activity_my_todo"
+            android:parentActivityName=".ui.HomeActivity"
+            android:theme="@style/Theme.MOBILE_IMMANUELJOSEPH_2301852215.NoActionBar" />
+        <activity
+            android:name=".ui.SplashScreenActivity"
+            android:theme="@style/SplashScreenStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.HomeActivity" />
+    </application>
+
+</manifest>

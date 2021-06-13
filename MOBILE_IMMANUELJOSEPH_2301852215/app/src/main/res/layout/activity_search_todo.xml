@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.mobile_immanueljoseph_2301852215.viewmodel.SearchTodoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/cl_search_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_basic_page"
+            tools:context=".ui.SearchTodoActivity">
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_basic_page"
+                app:elevation="0dp">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/toolbar_layout"
+                            layout="@layout/search_toolbar_layout"
+                            bind:foo="@{4}" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
+                            app:layout_constraintStart_toStartOf="@id/toolbar_layout"
+                            android:layout_marginLeft="50dp"
+                            android:orientation="horizontal">
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/cb_by_user"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/fix_search_todo_marginTop"
+                                android:layout_marginRight="@dimen/fix_search_by_marginRight"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/fix_search_todo_marginTop"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/by_user"/>
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/cb_by_todo"
+                                android:layout_marginLeft="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/fix_search_todo_marginTop"
+                                android:layout_marginRight="@dimen/fix_search_by_marginRight"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/fix_search_todo_marginTop"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/by_todo"/>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+                <TextView
+                    android:id="@+id/tv_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/basic_page_padding"
+                    android:paddingRight="@dimen/basic_page_padding"
+                    android:layout_marginTop="@dimen/fix_search_todo_marginTop"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="invisible"
+                    android:text='@{"Result for \"" + viewmodel.searchQuery + "\""}'/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <include
+                android:id="@+id/fill_page"
+                layout="@layout/fill_page_with_string_layout"
+                android:visibility="gone"
+                bind:foo="@{1}" />
+
+            <include
+                android:id="@+id/rv_todos"
+                layout="@layout/content_todo"
+                bind:foo="@{2}" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <include
+            android:id="@+id/progress_bar_layout"
+            layout="@layout/progress_bar"
+            bind:foo="@{3}" />
+    </RelativeLayout>
+</layout>

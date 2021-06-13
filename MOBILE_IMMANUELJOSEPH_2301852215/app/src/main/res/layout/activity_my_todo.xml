@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/cl_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_basic_page"
+            tools:context=".ui.MyTodoActivity">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_basic_page"
+                app:elevation="0dp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_page_height">
+
+                    <ImageView
+                        android:id="@+id/iv_back_button"
+                        android:layout_width="@dimen/back_btn_toolbar_size"
+                        android:layout_height="@dimen/back_btn_toolbar_size"
+                        android:foregroundGravity="center_horizontal"
+                        app:srcCompat="@drawable/ic_arrow_back" />
+                </androidx.appcompat.widget.Toolbar>
+
+                <LinearLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/basic_page_padding"
+                    android:paddingRight="@dimen/basic_page_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_todo"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_page_txtSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/subtext_marginTop"
+                        android:layout_marginBottom="@dimen/subtext_marginBot"
+                        android:text="@string/here_all_your_todos"
+                        android:textSize="@dimen/subtitle_page_txtSize" />
+                </LinearLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <include
+                android:id="@+id/fill_page"
+                layout="@layout/fill_page_with_string_layout"
+                android:visibility="gone"
+                bind:foo="@{1}" />
+
+            <include
+                android:id="@+id/rv_todos"
+                layout="@layout/content_todo"
+                bind:foo="@{2}" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="@color/sBase"
+                app:srcCompat="@drawable/ic_add"
+                app:tint="@color/white" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <include
+            android:id="@+id/progress_bar_layout"
+            layout="@layout/progress_bar"
+            bind:foo="@{3}" />
+    </RelativeLayout>
+</layout>

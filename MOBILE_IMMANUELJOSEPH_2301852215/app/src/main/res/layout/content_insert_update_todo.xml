@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="secondViewmodel"
+            type="com.example.mobile_immanueljoseph_2301852215.viewmodel.InsertUpdateTodoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/ll_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/basic_page_padding"
+            android:layout_marginTop="60dp"
+            app:layout_constraintTop_toBottomOf="@+id/ll_header"
+            android:focusableInTouchMode="true"
+            android:focusable="true">
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/normal_et_height"
+                android:background="@drawable/rounded_border_edittext"
+                android:padding="@dimen/normal_et_padding"
+                android:textSize="@dimen/normal_et_txtSize"
+                android:text="@={secondViewmodel.title}"
+                android:hint="Title"/>
+            <EditText
+                android:id="@+id/et_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/insertUpdate_et_marginTop"
+                android:background="@drawable/rounded_border_edittext"
+                android:padding="@dimen/normal_et_padding"
+                android:textSize="@dimen/normal_et_txtSize"
+                android:minLines="5"
+                android:gravity="top|left"
+                android:scrollbars="vertical"
+                android:text="@={secondViewmodel.description}"
+                android:hint="Description"/>
+            <TextView
+                android:id="@+id/tv_desc_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textSize="@dimen/subtitle_page_txtSize"
+                android:text='@{secondViewmodel.descLength + "/100"}'
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ll_input"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:text="@{secondViewmodel.warning}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
